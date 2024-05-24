@@ -72,9 +72,12 @@ def factorial(a: int) -> int:
     """
     if not isinstance(a, int):
         raise TypeError("Se intentó operar con datos que no son numeros enteros")
-    resultado = 1
-
-    for i in range(1, a + 1):
-        resultado *= i
-    return resultado
+        
+    if a == 0 or a == 1:
+        resultado = 1
+    else:
+        resultado = a * factorial(a - 1)
     
+    return resultado
+
+print(factorial(5))
