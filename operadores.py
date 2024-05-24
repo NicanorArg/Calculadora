@@ -8,6 +8,9 @@ def sumar(a: int, b: int) -> int:
     Returns:
         int: sumatoria de ambos numeros
     """
+    if not isinstance(a, int) or not isinstance(b, int):
+        raise TypeError("Se intentó operar con datos que no son numeros enteros")
+    
     return a + b
 
 def restar(a: int, b: int) -> int:
@@ -20,6 +23,9 @@ def restar(a: int, b: int) -> int:
     Returns:
         int: resultado de la resta
     """
+    if not isinstance(a, int) or not isinstance(b, int):
+        raise TypeError("Se intentó operar con datos que no son numeros enteros")
+    
     return a - b
     
 def multiplicar(a: int, b: int) -> int:
@@ -32,6 +38,9 @@ def multiplicar(a: int, b: int) -> int:
     Returns:
         int: producto de la multiplicacion
     """
+    if not isinstance(a, int) or not isinstance(b, int):
+        raise TypeError("Se intentó operar con datos que no son numeros enteros")
+    
     return a * b
 
 def dividir(a: int, b: int) -> float:
@@ -44,6 +53,12 @@ def dividir(a: int, b: int) -> float:
     Returns:
         int: cociente de la division
     """
+    if not isinstance(a, int) or not isinstance(b, int):
+        raise TypeError("ERROR: se intentó operar con datos que no son numeros enteros")
+    
+    if b == 0:
+        raise ZeroDivisionError("ERROR: division por cero")
+
     return a / b
 
 def factorial(a: int) -> int:
@@ -55,6 +70,8 @@ def factorial(a: int) -> int:
     Returns:
         int: factorial del numero
     """
+    if not isinstance(a, int):
+        raise TypeError("Se intentó operar con datos que no son numeros enteros")
     resultado = 1
 
     for i in range(1, a + 1):
