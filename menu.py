@@ -4,8 +4,6 @@ import operadores
 operando_1 = "A"
 operando_2 = "B"
 
-operando_1_listo = False
-operando_2_listo = False
 resultados_listos = False
 
 
@@ -20,28 +18,28 @@ while True:
     
     match opcion_elegida:
         case "1":
+            operando_1_listo = False
             operando_1 = input("Escriba un numero: ")
-            while not operando_1.lstrip("-").isdigit():
-                operando_1 = input("Error, escriba un numero: ")
-            try:
-                operando_1 = int(operando_1)
-                operando_1_listo = True
-            except ValueError:
-                operando_1 = "A"
-                print("No se ha ingresado un numero valido")
-                input("Presione enter para continuar")
+            while not operando_1_listo:
+                try:
+                    operando_1 = int(operando_1)
+                    operando_1_listo = True
+                except ValueError:
+                    operando_1 = "A"
+                    print("No se ha ingresado un numero valido")
+                    operando_1 = input("Escriba un numero valido: ")
 
         case "2":
+            operando_2_listo = False
             operando_2 = input("Escriba un numero: ")
-            while not operando_2.lstrip("-").isdigit():
-                operando_2 = input("Error, escriba un numero: ")
-            try:
-                operando_2 = int(operando_2)
-                operando_2_listo = True
-            except ValueError:
-                operando_2 = "B"
-                print("No se ha ingresado un numero valido")
-                input("Presione enter para continuar")
+            while not operando_2_listo:
+                try:
+                    operando_2 = int(operando_2)
+                    operando_2_listo = True
+                except ValueError:
+                    operando_2 = "B"
+                    print("No se ha ingresado un numero valido")
+                    operando_2 = input("Escriba un numero valido: ")
                 
 
         case "3":
