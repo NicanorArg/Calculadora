@@ -79,5 +79,3 @@ def factorial(a: int) -> int:
         resultado = a * factorial(a - 1)
     
     return resultado
-
-print(factorial(5))
