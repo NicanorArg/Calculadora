@@ -47,7 +47,10 @@ while True:
                 suma = operadores.sumar(operando_1, operando_2)
                 resta = operadores.restar(operando_1, operando_2)
                 producto = operadores.multiplicar(operando_1, operando_2)
-                cociente = operadores.dividir(operando_1, operando_2)
+                try:
+                    cociente = operadores.dividir(operando_1, operando_2)
+                except ZeroDivisionError:
+                    cociente = None
                 factorial1 = operadores.factorial(operando_1)
                 factorial2 = operadores.factorial(operando_2)
 
